@@ -1,0 +1,35 @@
+/* ! Universal styles */
+/* Root styles: Define reusable variables for colours, fonts, and other global properties */
+:root {
+  /* Colours */
+  --primary-black: #1E1E1E;
+  --dark-black: #141414;
+  --primary-lighter: #222323;
+  --cream: #F5F7F8;
+  --white: #FFF;
+  --dark-gold: #9C8E7F;
+  --gold: #BFB4A8;
+  --light-gold: #E7E0D8;
+  /* Fonts */
+  --heading-font: 'Playfair Display', 'serif';
+  --text-font: 'Lato', 'sans-serif';
+}
+
+/* HTML root styles: Global settings applied to the html element */
+html {
+  /* Smooth scrolling for better user experience */
+  scroll-behavior: smooth;
+}
+
+/* Body styles: Global base styles for the website */
+body {
+  background-color: var(--primary-black);
+  color: var(--cream);
+  /* Font declarations */
+  font-family: var(--text-font);
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  /* Include padding and borders in width calculations */
+  box-sizing: border-box;
+}

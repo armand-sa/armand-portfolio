@@ -1,11 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
+  <head>
+    <!-- ! Character Encoding -->
+    <!-- Specifies the character encoding for the HTML document to ensure proper display of text content. -->
+    <meta charset="UTF-8">
   
-</body>
+    <!-- ! Viewport Configuration -->
+    <!-- Ensures the webpage is responsive and renders correctly across various devices and screen sizes. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <!-- ! Title and Meta Description for SEO -->
+    <!-- Title: Optimal length is between 30 to 60 characters; aim for ~50 characters for clarity and SEO effectiveness. -->
+    <title>Armand McKey - Full-Stack Engineer Portfolio</title>
+    <!-- Meta Description: Ideal length is between 50 to 160 characters; aim for around 155 characters to provide a concise summary for search engines and users. -->
+    <meta name="description" content="Explore Armand McKey's portfolio, showcasing web development projects, skills, and contact details of an aspiring Full-Stack Engineer.">
+    <!-- Author Meta Tag: Specifies the author of the webpage content. -->
+    <meta name="author" content="Armand McKey">
+  
+    <!-- ! Security Headers -->
+    <!-- Content-Security-Policy (CSP): Helps prevent security risks like Cross-Site Scripting (XSS) attacks. Adjust the policy based on the specific resources your site needs to load. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https://armand-sa.github.io; child-src 'none';"> <!-- TODO: Adjust CSP if you add external JavaScript or analytics -->
+  
+    <!-- ! Preload Critical Resources -->
+    <!-- Preloading the hero background video ensures it loads early, improving the visual experience and perceived performance. -->
+    <link rel="preload" href="assets/videos/hero-section-video-compressed-MP4.mp4" as="video" type="video/mp4"> <!-- TODO: Replace with updated path if the hero video changes -->
+
+  
+    <!-- ! Performance Optimizations -->
+    <!-- Preconnect: Establishes early connections to external resources, reducing latency and improving load times. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- DNS Prefetch: Resolves domain names in advance, further reducing latency for external resources. -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+  
+    <!-- ! Google Fonts -->
+    <!-- Loading fonts with display=swap ensures text remains visible during font loading, preventing invisible text and enhancing user experience. -->
+    <link href="https://fonts.googleapis.com/css2?family=Prata&family=Sen:wght@400..800&display=swap" rel="stylesheet"> <!-- TODO: Verify fonts align with future branding changes -->
+  
+    <!-- ! Bootstrap CSS -->
+    <!-- Including Bootstrap's CSS framework provides a responsive layout and pre-styled components, facilitating faster development. Ensure it loads before custom styles for proper overriding. -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  
+    <!-- ! Custom CSS Stylesheets -->
+    <!-- Including a CSS reset normalizes default browser styles, ensuring consistency across different browsers. -->
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <!-- Main stylesheet for custom styles specific to your portfolio. -->
+    <link rel="stylesheet" href="assets/css/main.css">
+  
+    <!-- ! Favicons and Theme Colors -->
+    <!-- Favicons provide icons for various devices and contexts, enhancing brand recognition and user experience. -->
+    <link rel="icon" href="assets/images/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="assets/images/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png">
+    <link rel="manifest" href="assets/images/favicons/site.webmanifest"> <!-- TODO: Update manifest if favicons or theme colors change -->
+    <link rel="mask-icon" href="assets/images/favicons/safari-pinned-tab.svg" color="#BFB4A8">
+    <!-- Theme color for mobile browsers; sets the color of the browser's address bar to match your site's branding. -->
+    <meta name="theme-color" content="#1E1E1E">
+  
+    <!-- ! Accessibility and Mobile Configurations -->
+    <!-- Provides support for light and dark modes to match user preferences. -->
+    <meta name="color-scheme" content="light dark">
+    <!-- Enables the website to function as a standalone app on Apple devices when added to the home screen. -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- Enables the website to function as a standalone app on Android devices when added to the home screen. -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <!-- Canonical URL: Prevents duplicate content issues by specifying the preferred URL for this page, aiding SEO. -->
+    <link rel="canonical" href="https://armand-sa.github.io/armand-portfolio/"> <!-- TODO: Change canonical URL if domain updates -->
+  
+    <!-- ! Open Graph Metadata -->
+    <!-- Enhances link previews when the page is shared on social media platforms, improving engagement. -->
+    <meta property="og:title" content="Armand McKey's Portfolio">
+    <meta property="og:description" content="Showcasing web development projects, skills, and contact information for Armand McKey, aspiring Full-Stack Engineer.">
+    <!-- Ensure the image URL is absolute and points to a high-quality image that represents your content. -->
+    <meta property="og:image" content="https://armand-sa.github.io/armand-portfolio/assets/images/preview-images/preview.webp"> <!-- TODO: Replace with updated image URL if preview image changes -->
+    <meta property="og:url" content="https://armand-sa.github.io/armand-portfolio">
+    <meta property="og:type" content="website">
+  
+    <!-- ! Twitter Card Metadata -->
+    <!-- Provides rich content previews when the page is shared on Twitter, enhancing visibility and engagement. -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Armand McKey's Portfolio">
+    <meta name="twitter:description" content="Showcasing web development projects, skills, and contact information for Armand McKey, aspiring Full-Stack Engineer.">
+    <!-- Ensure the image URL is absolute and points to a high-quality image optimized for Twitter's display requirements. -->
+    <meta name="twitter:image" content="https://armand-sa.github.io/armand-portfolio/assets/images/preview-images/preview.jpg"> <!-- TODO: Verify if alternate images are needed for Twitter -->
+    <!-- Provides alternative text for the Twitter image, improving accessibility for users utilizing screen readers. -->
+    <meta name="twitter:image:alt" content="Portfolio preview image showcasing Armand McKey's work">
+  
+    <!-- ! Structured Data for Rich Snippets -->
+    <!-- Google uses structured data to display rich results in search (e.g., knowledge panels or enhanced snippets). -->
+    <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "Armand McKey",
+      "jobTitle": "Aspiring Full-Stack Engineer",
+      "url": "https://armand-sa.github.io/armand-portfolio/"
+    }
+    </script> <!-- TODO: Update jobTitle and URL as your career and domain evolve -->
+  
+    <!-- ! Prefetch Important Resources -->
+    <!-- Prefetch Bootstrap JS to improve interactivity -->
+    <link rel="prefetch" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    <!-- Prefetch internal pages for faster navigation -->
+    <link rel="prefetch" href="pages/contact.html">
+    <link rel="prefetch" href="pages/resume.html"> <!-- TODO: Prefetch additional pages as the site expands -->
+  </head>
+  
+  <body>
+    
+  </body>
+
 </html>
