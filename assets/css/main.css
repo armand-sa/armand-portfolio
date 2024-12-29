@@ -208,7 +208,7 @@ p {
 }
 
 /* ! -------------------------------------- */
-/* ! Next */
+/* ! Main and Sections */
 /* ! -------------------------------------- */
 
 /* Sections */
@@ -226,18 +226,21 @@ main {
 
 #section-1 {
   background-color: #ffefd5;
+  background: var(--text-light);
   color: var(--text-dark);
   z-index: 1;
 }
 
 #section-2 {
   background-color: #d3f8e2;
+  background: var(--text-cream);
   color: var(--text-dark);
   z-index: 2;
 }
 
 #section-3 {
   background-color: #f2d7ee;
+  background: var(--text-white);
   color: var(--text-dark);
   z-index: 3;
 }
