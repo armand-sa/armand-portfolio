@@ -1,35 +1,85 @@
 /* ! Universal styles */
 /* Root styles: Define reusable variables for colours, fonts, and other global properties */
 :root {
+
+  /* Typography - Heading */
+  --heading-font-family: 'Prata', serif;
+  --heading-font-weight: 400;
+  --heading-font-style: normal;
+  --heading-line-height: 1.1;
+  --heading-letter-spacing: 2px;
+
+  /* Typography - Body */
+  --text-font-family: 'Sen', sans-serif;
+
   /* Colours */
-  --primary-black: #1E1E1E;
-  --dark-black: #141414;
-  --primary-lighter: #222323;
-  --cream: #F5F7F8;
-  --white: #FFF;
-  --dark-gold: #9C8E7F;
-  --gold: #BFB4A8;
-  --light-gold: #E7E0D8;
-  /* Fonts */
-  --heading-font: 'Playfair Display', 'serif';
-  --text-font: 'Lato', 'sans-serif';
+  /* Backgrounds */
+  --background-dark: #1E1E1E;
+  --background-light: #282929;
+  --extra-light-black: #424444;
+
+  /* Accents */
+  --accent-primary: #BFB4A8;
+  --accent-dark: #9C8E7F;
+  --accent-light: #E7E0D8;
+
+  /* Text */
+  --text-light: #E7E0D8;
+  --text-cream: #F5F7F8;
+  --text-white: #FFFFFF;
 }
 
 /* HTML root styles: Global settings applied to the html element */
 html {
+  /* Base font size set to 16px for easier scaling,  
+  sets a baseline that’s respectful of user settings*/
+  font-size: 100%; 
   /* Smooth scrolling for better user experience */
   scroll-behavior: smooth;
 }
 
 /* Body styles: Global base styles for the website */
 body {
-  background-color: var(--primary-black);
-  color: var(--cream);
+  background-color: var(--background-dark);
+  color: var(--text-light);
   /* Font declarations */
-  font-family: var(--text-font);
+  font-family: var(--text-font-family);
   font-size: 16px;
-  font-weight: 300;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
   letter-spacing: 1px;
-  /* Include padding and borders in width calculations */
-  box-sizing: border-box;
+  line-height: 1.4;
+}
+
+/* Focus styles for better accessibility */
+:focus {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+/* Heading Styles */
+h1,
+h2,
+h3 {
+  font-family: var(--heading-font-family);
+  font-weight: var(--heading-font-weight);
+  font-style: var(--heading-font-style);
+  letter-spacing: var(--heading-letter-spacing);
+  line-height: var(--heading-line-height);
+}
+
+h1 {
+  /* font-size: clamp(minimum, preferred 85.8px, maximum); */
+  font-size: clamp(3rem, 5.96vw, 6rem);
+}
+
+h2 {
+  /* font-size: clamp(minimum, preferred 32px, maximum); */
+  font-size: clamp(1.5rem, 2.22vw, 2.25rem);
+}
+
+h3 {
+  /* font-size: clamp(minimum, preferred 24px, maximum); */
+  font-size: clamp(1.125rem, 1.67vw, 1.75rem);
 }
