@@ -164,6 +164,14 @@ p {
   color: var(--text-light);
 }
 
+.c-lowercase {
+  text-transform: lowercase;
+}
+
+/* ! -------------------------------------- */
+/* ! Navbar */
+/* ! -------------------------------------- */
+
 
 /* ! -------------------------------------- */
 /* ! Hero */
@@ -287,4 +295,18 @@ main {
 #about-section h2,
 #about-section p {
   color: var(--text-dark); 
+}
+
+/* * Teck Stack - Section */
+/* * -------------------------------------- */
+#tech-stack-section {
+  background-color: var(--background-light);
+  z-index: 4;
+}
+
+/* * Testimonials - Section */
+/* * -------------------------------------- */
+#testimonials {
+  background-color: var(--background-primary);
+  z-index: 5;
 }
