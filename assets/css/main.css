@@ -18,7 +18,7 @@
 
   /* Colours */
   /* Backgrounds */
-  --background-primary: #1E1E1E;
+  --background-primary: #1e1e1e;
   --background-dark: #141414;
   --background-light: #282929;
   --extra-light-black: #424444;
@@ -30,9 +30,13 @@
 
   /* Text */
   --text-dark: #1E1E1E;
-  --text-light: #E7E0D8;
+  --text-primary-gold: #BFB4A8;
+  --text-light-gold: #E7E0D8;
   --text-cream: #F5F7F8;
   --text-white: #FFFFFF;
+
+  /* Line Colours */
+  --on-dark-line: #5F5B55;
 }
 
 /* HTML root styles: Global settings applied to the html element */
@@ -111,11 +115,12 @@ body {
 /* -------------------------------------- */
 
 
-/* Focus styles for better accessibility */
+/* Focus and Active styles for better accessibility */
 :focus {
-  outline: 2px solid var(--accent-primary);
-  outline-offset: 2px;
+  outline: 1px solid var(--accent-primary);
+  outline-offset: 3px;
 }
+
 
 /* Heading Styles */
 h1,
@@ -126,7 +131,7 @@ h3 {
   font-style: var(--heading-font-style);
   letter-spacing: var(--heading-letter-spacing);
   line-height: var(--heading-line-height);
-  color: var(--accent-primary);
+  color: var(--text-primary-gold);
   text-transform: uppercase;
 }
 
@@ -171,6 +176,139 @@ p {
 /* ! -------------------------------------- */
 /* ! Navbar */
 /* ! -------------------------------------- */
+
+/* Gap ~30px at 1440px wide */
+/* Padding: ~120px at 1440px wide */
+/* 
+.container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 2.08vw;            
+  padding: 0 8.33vw;      
+} 
+*/
+
+.navbar {
+  background-color: var(--background-dark);
+  height: 5.625rem;
+  box-shadow: 0 5px 40px rgba(0, 0, 0, 0.15);
+  border: none;
+}
+
+.navbar .container-fluid {
+  padding: 0 8.33vw; 
+  display: flex;
+  /* vertical centring */
+  align-items: center;     
+  /* horizontal spacing */
+  justify-content: space-between; 
+  /* fills the navbar's 90px */
+  height: 100%;           
+}
+
+/* Left Side */
+.navbar-brand {
+  display: flex;
+  /* vertical centring */
+  align-items: center;
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: var(--text-primary-gold);
+  letter-spacing: .0625rem;
+}
+
+.navbar-brand img {
+  height: 3rem;
+  margin-right: 2.08vw;
+}
+
+/* Right Side */
+
+.navbar-toggler {
+  border: none;
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: var(--text-primary-gold);
+  letter-spacing: .0625rem;
+}
+
+/* Navbar Offcanvas Header */
+.offcanvas-header {
+  height: 90px;
+  background-color: var(--background-light);
+  padding-left: 1.875rem; 
+  padding-right: 1.875rem; 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 5px 40px rgba(0, 0, 0, 0.15); 
+}
+
+.offcanvas-title {
+  margin: 0;
+  padding: 0; 
+}
+
+.btn-close {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  height: auto;
+  text-transform: uppercase;
+  color: var(--text-primary-gold);
+  font-size: .875rem;
+  letter-spacing: .0313rem;
+}
+
+/* Navbar Offcanvas Body */
+.offcanvas-body {
+  background-color: var(--background-primary);           
+}
+
+/* Navbar Offcanvas Links */
+.nav-link {
+  padding: .9375rem 1.875rem; 
+  font-size: 1rem;
+  letter-spacing: .0625rem;
+  text-transform: uppercase;
+  color: var(--text-primary-gold);
+}
+
+/* Dropdowns */
+.dropdown-menu {
+  background-color: var(--background-dark);
+  border: none;
+  border-radius: 0;
+  padding: .9375rem 0;
+  margin: 0;
+}
+
+.dropdown-menu .dropdown-item{
+  font-size: .875rem;
+  letter-spacing: .0313rem;
+  text-transform: uppercase;
+  color: var(--text-primary-gold);
+  padding: .9375rem 1.875rem;
+}
+
+.dropdown-divider {
+  background-color: var(--on-dark-line);
+  margin: .9375rem 1.875rem; 
+}
+
+/* Focus states for better accessibility */
+.navbar *:focus {
+  box-shadow: none;
+  outline: 1px solid var(--accent-primary);
+  outline-offset: 3px;
+  border-radius: 0;
+}
+
+.offcanvas:focus {
+  outline: none;
+}
 
 
 /* ! -------------------------------------- */

@@ -19,8 +19,17 @@
   
     <!-- ! Security Headers -->
     <!-- Content-Security-Policy (CSP): Helps prevent security risks like Cross-Site Scripting (XSS) attacks. Adjust the policy based on the specific resources your site needs to load. -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https://armand-sa.github.io; child-src 'none';"> <!-- TODO: Adjust CSP if you add external JavaScript or analytics -->
-  
+    <meta http-equiv="Content-Security-Policy"
+      content="
+        default-src 'self'; 
+        script-src 'self' https://cdn.jsdelivr.net 'unsafe-inline';
+        style-src   'self' https://cdn.jsdelivr.net 'unsafe-inline';
+        img-src     'self' https://armand-sa.github.io; 
+        child-src   'none';
+      "
+    >
+
+
     <!-- ! Preload Critical Resources -->
     <!-- Preloading the hero background video ensures it loads early, improving the visual experience and perceived performance. -->
     <link rel="preload" href="assets/videos/hero-section-video-compressed-MP4.mp4" as="video" type="video/mp4"> <!-- TODO: Replace with updated path if the hero video changes -->
@@ -110,8 +119,78 @@
   <body>
     <!-- ! Navbar -->
     <header>
-      <nav>
-        <!-- Navigation links -->
+      <!-- Bootstrap Navbar -->
+      <nav class="navbar navbar-dark fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><img src="./assets/images/logos/Logo - Gold.webp" alt="">Armand M<span class="c-lowercase">c</span>Key</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+            menu
+          </button>
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+            <div class="offcanvas-header">
+              <h3 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Site Navigation</h3>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">Close</button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Home Page
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-dark">
+                    <li><a class="dropdown-item" aria-current="page" href="#">Go to Home Page</a></li>
+                    <li>
+                      <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#hero">Start</a></li>
+                    <li><a class="dropdown-item" href="#portfolio-section-1">Featured Work 1</a></li>
+                    <li><a class="dropdown-item" href="#portfolio-section-1">Featured Work  2</a></li>
+                    <li><a class="dropdown-item" href="#about-section">Who I Am</a></li>
+                    <li><a class="dropdown-item" href="#tech-stack-section">Technologies I Use</a></li>
+                    <li><a class="dropdown-item" href="#testimonialsn">What People Say</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Resume Page
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-dark">
+                    <li><a class="dropdown-item" href="./pages/resume.html">Go to Resume Page</a></li>
+                    <li>
+                      <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">Section 1</a></li>
+                    <li><a class="dropdown-item" href="#">Section 2</a></li>
+                    <li><a class="dropdown-item" href="#">Section 3</a></li>
+                    <li><a class="dropdown-item" href="#">Section 4</a></li>
+                    <li><a class="dropdown-item" href="#">Section 5</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Contact Page
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-dark">
+                    <li><a class="dropdown-item" href="./pages/contact.html">Go to Contact Page</a></li>
+                    <li>
+                      <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">Section 1</a></li>
+                    <li><a class="dropdown-item" href="#">Section 2</a></li>
+                    <li><a class="dropdown-item" href="#">Section 3</a></li>
+                    <li><a class="dropdown-item" href="#">Section 4</a></li>
+                    <li><a class="dropdown-item" href="#">Section 5</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <!-- TODO - Implement search later -->
+              <!-- <form class="d-flex mt-3" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-success" type="submit">Search</button>
+              </form> -->
+            </div>
+          </div>
+        </div>
       </nav>
     </header>
 
@@ -174,6 +253,9 @@
     <footer class="footer">
       <p>&copy; 2024 Armand McKey. All rights reserved.</p>
     </footer>
+
+    <!-- ! Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
 
 </html>
