@@ -109,13 +109,16 @@
   
   <body>
     <!-- ! Navbar -->
-    <nav>
-      <!-- Navigation links -->
-    </nav>
+    <header>
+      <nav>
+        <!-- Navigation links -->
+      </nav>
+    </header>
 
-    <!-- ! Hero Section -->
-    <header id="hero">
-      <video class="background-video" autoplay muted loop>
+
+    <!-- ! Header / Hero Section -->
+    <section id="hero" aria-hidden="true">
+      <video class="background-video" aria-hidden="true" preload="auto" autoplay muted loop>
         <source src="./assets/images/videos/hero-section-video-compressed-MP4.mp4" type="video/mp4">
         Your browser does not support the video.
       </video>
@@ -124,26 +127,30 @@
         <h1>Full-Stack Engineer in the making...</h1>
         <p>Your journey starts here.</p>
       </div>
-    </header>
+    </section>
 
     <!-- ! Main Content -->
     <main>
-      <!-- Section 1 -->
-      <section class="section" id="section-1">
+      <!-- * Portfolio 1 - Section -->
+      <!-- * -------------------------------------- -->
+      <section class="section" id="portfolio-section-1">
         <h2>Section 1 Title</h2>
         <p>Section 1 content...</p>
       </section>
 
-      <!-- Section 2 -->
-      <section class="section" id="section-2">
+      <!-- * Portfolio 2 - Section -->
+      <!-- * -------------------------------------- -->
+      <section class="section" id="portfolio-section-2">
         <h2>Section 2 Title</h2>
         <p>Section 2 content...</p>
       </section>
 
-      <!-- Section 3 -->
-      <section class="section" id="section-3">
-        <h2>Section 3 Title</h2>
-        <p>Section 3 content...</p>
+      <!-- * About - Section -->
+      <section class="section" id="about-section">
+        <div class="about-content">
+          <h2>About Armand McKey</h2>
+          <p>Discover my journey into Full-Stack Engineering...</p>
+        </div>
       </section>
     </main>
 

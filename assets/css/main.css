@@ -1,5 +1,5 @@
 /* ! -------------------------------------- */
-/* ! Universal styles */
+/* ! Universal */
 /* ! -------------------------------------- */
 
 
@@ -149,21 +149,24 @@ h3 {
 p {
   /* Font size: min 14px, 16px preferred on 1440px, max 18px */
   font-size: clamp(0.875rem, 1.11vw, 1.125rem);
+  color: var(--text-light);
 }
 
 .footer-paragraph {
   /* Font size: min 12px, 14px preferred on 1440px, max 16px */
   font-size: clamp(0.75rem, 0.97vw, 1rem);
+  color: var(--text-light);
 }
 
 .legal-paragraph {
   /* Font size: min 10px, 12px preferred on 1440px, max 14px */
   font-size: clamp(0.625rem, 0.83vw, 0.875rem);
+  color: var(--text-light);
 }
 
 
 /* ! -------------------------------------- */
-/* ! Hero styles */
+/* ! Hero */
 /* ! -------------------------------------- */
 
 #hero {
@@ -196,7 +199,7 @@ p {
   height: 100%;
   width: 100%;
   z-index: 1;
-  background: rgba(30, 30, 30, .95);
+  background-color: rgba(30, 30, 30, .95);
 }
 
 /* Hero Content */
@@ -211,36 +214,77 @@ p {
 /* ! Main and Sections */
 /* ! -------------------------------------- */
 
-/* Sections */
+/* * Main and General Section */
+/* * -------------------------------------- */
 main {
   position: relative;
 }
 
 .section {
-  height: 100vh;
+  height: 100dvh;
   width: 100%;
   /* Allow sections to overlap and stick */
   position: sticky;
   top: 0;
 }
 
-#section-1 {
-  background-color: #ffefd5;
-  background: var(--text-light);
-  color: var(--text-dark);
+/* * Portfolio 1 - Section */
+/* * -------------------------------------- */
+#portfolio-section-1 {
+  background-color: var(--background-light);
   z-index: 1;
 }
 
-#section-2 {
-  background-color: #d3f8e2;
-  background: var(--text-cream);
-  color: var(--text-dark);
+/* * Portfolio 2 - Section */
+/* * -------------------------------------- */
+#portfolio-section-2 {
+  background-color: var(--background-primary);
   z-index: 2;
 }
 
-#section-3 {
-  background-color: #f2d7ee;
-  background: var(--text-white);
-  color: var(--text-dark);
+/* * About - Section */
+/* * -------------------------------------- */
+#about-section {
+  position: relative; /* For overlay positioning */
+  background-image: url(../images/homepage/homepage_hero.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* Parallax effect: Makes the background scroll slower than the foreground content. */
+  background-attachment: fixed;
   z-index: 3;
+  /* Hide excess background */
+  overflow: hidden; 
+  /* Enhances the parallax illusion */
+  perspective: 5px; 
+}
+
+#about-section::before {
+  /* Creates a pseudo-element for the overlay. */
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* Height 200% */
+  height: 200%;
+  /* Adjust for slower movement */
+  transform: translateY(-30%); 
+  /* Gold overlay */
+  background-color: rgba(231, 224, 216, 0.9); 
+  /* Below content but above background */
+  z-index: 2; 
+}
+
+.about-content {
+  /* Ensures content is above overlay */
+  position: relative; 
+  z-index: 3;
+  /* Adjust for faster movement */ 
+  transform: translateY(15%); 
+}
+
+#about-section h2,
+#about-section p {
+  color: var(--text-dark); 
 }
