@@ -329,7 +329,8 @@ p {
 
 .navbar-brand:focus,
 .navbar-toggler:focus,
-.btn-close:focus {
+.btn-close:focus,
+.nav-link:focus {
   /* Removes the default focus outline */
   outline: none; 
   /* Removes any box-shadow applied as a focus indicator */
@@ -339,7 +340,8 @@ p {
 /* Add a custom visual cue for focus for accessibility */
 .navbar-brand:focus-visible,
 .navbar-toggler:focus-visible,
-.btn-close:focus-visible {
+.btn-close:focus-visible,
+.nav-link:focus-visible {
   outline: 2px solid var(--accent-primary); 
   /* Only show focus when navigated via keyboard */
   outline-offset: 3px;
@@ -473,7 +475,8 @@ p {
 /* * -------------------------------------- */
 .navbar-brand:active,
 .navbar-toggler:active,
-.btn-close:active {
+.btn-close:active,
+.nav-link {
   outline: none;
   border: none;
 }
@@ -487,7 +490,8 @@ p {
 
 .navbar-brand:active .link-text,
 .navbar-toggler:active,
-.btn-close:active {
+.btn-close:active,
+.nav-link {
   transform: translateY(2px);
   transition: all 0.3s ease-in-out;
 }
