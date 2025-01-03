@@ -3,9 +3,10 @@
 /* ! -------------------------------------- */
 
 
-/* Root styles: Define reusable variables for colours, fonts, and other global properties */
+/* * Root styles: Define reusable variables 
+   * for colours, fonts, and other global properties */
+/* * -------------------------------------- */
 :root {
-
   /* Typography - Heading */
   --heading-font-family: 'Prata', serif;
   --heading-font-weight: 400;
@@ -30,8 +31,10 @@
 
   /* Text */
   --text-dark: #1E1E1E;
+  --text-dark-gold: #9C8E7F;
   --text-primary-gold: #BFB4A8;
   --text-light-gold: #E7E0D8;
+  --text-lightest-gold: #FFFCF9;
   --text-cream: #F5F7F8;
   --text-white: #FFFFFF;
 
@@ -39,7 +42,9 @@
   --on-dark-line: #5F5B55;
 }
 
-/* HTML root styles: Global settings applied to the html element */
+/* * HTML root styles: Global settings 
+   * applied to the html element */
+/* * -------------------------------------- */
 html {
   /* Base font size set to 16px for easier scaling,  
   sets a baseline that’s respectful of user settings*/
@@ -50,7 +55,9 @@ html {
   background-color: var(--background-primary); 
 }
 
-/* Body styles: Global base styles for the website */
+/* * Body styles: Global base styles for 
+   * the website */
+/* * -------------------------------------- */
 body {
   background-color: var(--background-primary);
   color: var(--text-light);
@@ -65,9 +72,8 @@ body {
   overflow-x: hidden;
 }
 
-/* -------------------------------------- */
-/* Modern, Apple-like Scrollbar Styles */
-
+/* * Modern, Apple-like Scrollbar Styles */
+/* * -------------------------------------- */
 /* General scrollbar styles */
 ::-webkit-scrollbar {
   width: 8px; /* Default thin scrollbar width */
@@ -112,17 +118,8 @@ body {
   height: 12px; /* Match thumb height on hover */
 }
 
-/* -------------------------------------- */
-
-
-/* Focus and Active styles for better accessibility */
-:focus {
-  outline: 1px solid var(--accent-primary);
-  outline-offset: 3px;
-}
-
-
-/* Heading Styles */
+/* * Heading Styles */
+/* * -------------------------------------- */
 h1,
 h2,
 h3 {
@@ -150,7 +147,8 @@ h3 {
   font-size: clamp(1.125rem, 1.67vw, 1.75rem);
 }
 
-/* Paragraph Styles */
+/* * Paragraph Styles */
+/* * -------------------------------------- */
 p {
   /* Font size: min 14px, 16px preferred on 1440px, max 18px */
   font-size: clamp(0.875rem, 1.11vw, 1.125rem);
@@ -206,7 +204,8 @@ p {
   height: 100%;           
 }
 
-/* Font Styles */
+/* * Font Styles */
+/* * -------------------------------------- */
 .navbar-brand, 
 .navbar-toggler, 
 .nav-link {
@@ -231,11 +230,17 @@ p {
   display: flex;
   /* vertical centring */
   align-items: center;
+  position: relative;
 }
+
 
 .navbar-brand img {
   height: 3rem;
   margin-right: 2.08vw;
+  border-radius: 100%;
+  opacity: 70%;
+  scale: 1;
+  transition: all 0.3s ease-in-out;
 }
 
 /* Right Side */
@@ -299,7 +304,8 @@ p {
   margin: .9375rem 1.875rem; 
 }
 
-/* Focus states for better accessibility */
+/* * Navbar - Focus States */
+/* * -------------------------------------- */
 .navbar *:focus {
   box-shadow: none;
   outline: 1px solid var(--accent-primary);
@@ -309,6 +315,99 @@ p {
 
 .offcanvas:focus {
   outline: none;
+}
+
+.navbar-brand:focus {
+  /* Removes the default focus outline */
+  outline: none; 
+  /* Removes any box-shadow applied as a focus indicator */
+  box-shadow: none; 
+}
+
+/* Add a custom visual cue for focus for accessibility */
+.navbar-brand:focus-visible {
+  outline: 2px solid var(--accent-primary); 
+  /* Only show focus when navigated via keyboard */
+  outline-offset: 3px;
+}
+
+/* * Navbar - Hover Effects */
+/* * -------------------------------------- */
+.navbar-brand > .link-text {
+  /* Creates a gradient that starts with --text-lightest-gold and transitions to --text-light-gold at 50%, then --text-primary-gold beyond 50%, applied horizontally */
+  background-image: linear-gradient(
+    to right,
+    var(--text-lightest-gold),
+    var(--text-light-gold) 50%,
+    var(--text-primary-gold) 50%
+  );
+  /* Makes the background twice the width of the text (200%) and the same height (100%) for animation purposes */
+  background-size: 200% 100%;
+  /* Positions the gradient outside the left edge of the visible text initially */
+  background-position: -100%;
+  /* Makes the text behave like a block element within inline content, allowing padding and height adjustments */
+  display: inline-block;
+  padding: 5px 0;
+  /* Ensures that the :before pseudo-element is positioned relative to this text element */
+  position: relative;
+  /* Confines the gradient background to the text itself (modern browsers use background-clip, Safari uses the -webkit- version) */
+  background-clip: text;
+  -webkit-background-clip: text;
+  /* Makes the text itself transparent, so only the gradient background is visible */
+  -webkit-text-fill-color: transparent;
+  transition: background-position 0.3s ease-in-out; /* Smoothly animates gradient positioning */
+}
+
+.navbar-brand .link-text::before {
+  /* Creates an empty pseudo-element */
+  content: '';
+  background: var(--text-primary-gold); /* Sets the line colour */
+  /* Makes the pseudo-element a block, so it can span the full width of the parent element */
+  display: block;
+  position: absolute;
+  /* Positions the pseudo-element relative to the .link-text element */
+  bottom: -3px;
+  left: 0; /* Line starts from the left */
+  /* Starts with the underline hidden (0 width) */
+  width: 0;
+  height: 1px; /* Thickness of the underline */
+  transition: width 0.3s ease-in-out; /* Smoothly animates the width expansion */
+}
+
+.navbar-brand:hover .link-text {
+  /* Moves the gradient to align perfectly with the text when hovered */
+  background-position: 0;
+}
+
+.navbar-brand:hover .link-text::before {
+  /* Expands the underline to the full width of the text when hovered */
+  width: 100%;
+}
+
+.navbar-brand:hover img {
+  /* Fully visible when hovered */
+  opacity: 100%; 
+  /* Enlarges slightly */
+  transform: scale(1.1); 
+}
+
+/* * Navbar - Active States */
+/* * -------------------------------------- */
+.navbar-brand:active {
+  outline: none;
+  border: none;
+}
+
+.navbar-brand:active img {
+  transform: scale(0.9);
+  transform: translateY(2px);
+  opacity: 50%;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar-brand:active .link-text {
+  transform: translateY(2px);
+  transition: all 0.3s ease-in-out;
 }
 
 
@@ -327,7 +426,8 @@ p {
   overflow: hidden;
 }
 
-/* Background Video */
+/* * Background Video */
+/* * -------------------------------------- */
 .background-video {
   position: absolute;
   top: 0;
@@ -338,7 +438,8 @@ p {
   z-index: 0;
 }
 
-/* Video Overlay */
+/* * Video Overlay */
+/* * -------------------------------------- */
 .video-overlay {
   position: absolute;
   top: 0;
@@ -349,7 +450,8 @@ p {
   background-color: rgba(30, 30, 30, .95);
 }
 
-/* Hero Content */
+/* * Hero Content */
+/* * -------------------------------------- */
 .hero-content {
   position: relative;
   z-index: 2;
