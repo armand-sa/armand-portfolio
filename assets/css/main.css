@@ -285,9 +285,14 @@ p {
   background-color: var(--background-primary);           
 }
 
-/* Navbar Offcanvas Links */
+/* * Navbar Offcanvas MAIN dropdown Links */
 .nav-link {
   padding: .9375rem 1.875rem; 
+  margin: .9375rem .9375rem;
+}
+
+.nav-link:last-of-type { 
+  margin-bottom: 0;
 }
 
 /* Dropdowns */
@@ -296,7 +301,7 @@ p {
   border: none;
   border-radius: 0;
   padding: .9375rem 0;
-  margin: 0;
+  margin: 0 .75rem;
 }
 
 /* Dropdown Links */
@@ -343,7 +348,8 @@ p {
 /* * Navbar - Hover Effects */
 /* * -------------------------------------- */
 .navbar-brand > .link-text,
-.navbar-toggler {
+.navbar-toggler,
+.nav-link {
   /* Creates a gradient that starts with --text-lightest-gold and transitions to --text-light-gold at 50%, then --text-primary-gold beyond 50%, applied horizontally */
   background-image: linear-gradient(
     to right,
@@ -369,7 +375,8 @@ p {
 }
 
 .navbar-brand .link-text::before,
-.navbar-toggler::before {
+.navbar-toggler::before,
+.nav-link::before {
   /* Creates an empty pseudo-element */
   content: '';
   background: var(--text-primary-gold); /* Sets the line colour */
@@ -386,13 +393,15 @@ p {
 }
 
 .navbar-brand:hover .link-text,
-.navbar-toggler:hover {
+.navbar-toggler:hover,
+.nav-link {
   /* Moves the gradient to align perfectly with the text when hovered */
   background-position: 0;
 }
 
 .navbar-brand:hover .link-text::before,
-.navbar-toggler:hover::before {
+.navbar-toggler:hover::before,
+.nav-link:hover::before {
   /* Expands the underline to the full width of the text when hovered */
   width: 100%;
 }
