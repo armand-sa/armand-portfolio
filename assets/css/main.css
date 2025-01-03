@@ -206,15 +206,31 @@ p {
   height: 100%;           
 }
 
+/* Font Styles */
+.navbar-brand, 
+.navbar-toggler, 
+.nav-link {
+  /* Font size: min 14px, 16px preferred on 1440px, max 18px */
+  font-size: clamp(0.875rem, 1.11vw, 1.125rem);
+  text-transform: uppercase;
+  letter-spacing: .0625rem;
+  color: var(--text-primary-gold);
+}
+
+.btn-close, 
+.dropdown-menu .dropdown-item {
+  /* Font size: min 12px, 14px preferred on 1440px, max 16px */
+  font-size: clamp(.75rem, 0.972vw, 1rem);
+  text-transform: uppercase;
+  letter-spacing: .0313rem;
+  color: var(--text-primary-gold);
+}
+
 /* Left Side */
 .navbar-brand {
   display: flex;
   /* vertical centring */
   align-items: center;
-  font-size: 1rem;
-  text-transform: uppercase;
-  color: var(--text-primary-gold);
-  letter-spacing: .0625rem;
 }
 
 .navbar-brand img {
@@ -223,13 +239,8 @@ p {
 }
 
 /* Right Side */
-
 .navbar-toggler {
   border: none;
-  font-size: 1rem;
-  text-transform: uppercase;
-  color: var(--text-primary-gold);
-  letter-spacing: .0625rem;
 }
 
 /* Navbar Offcanvas Header */
@@ -256,10 +267,7 @@ p {
   padding: 0;
   width: auto;
   height: auto;
-  text-transform: uppercase;
-  color: var(--text-primary-gold);
-  font-size: .875rem;
-  letter-spacing: .0313rem;
+  opacity: 100%;
 }
 
 /* Navbar Offcanvas Body */
@@ -270,10 +278,6 @@ p {
 /* Navbar Offcanvas Links */
 .nav-link {
   padding: .9375rem 1.875rem; 
-  font-size: 1rem;
-  letter-spacing: .0625rem;
-  text-transform: uppercase;
-  color: var(--text-primary-gold);
 }
 
 /* Dropdowns */
@@ -285,11 +289,8 @@ p {
   margin: 0;
 }
 
-.dropdown-menu .dropdown-item{
-  font-size: .875rem;
-  letter-spacing: .0313rem;
-  text-transform: uppercase;
-  color: var(--text-primary-gold);
+/* Dropdown Links */
+.dropdown-menu .dropdown-item {
   padding: .9375rem 1.875rem;
 }
 
@@ -376,21 +377,21 @@ main {
 
 /* * Portfolio 1 - Section */
 /* * -------------------------------------- */
-#portfolio-section-1 {
+#portfolio-1 {
   background-color: var(--background-light);
   z-index: 1;
 }
 
 /* * Portfolio 2 - Section */
 /* * -------------------------------------- */
-#portfolio-section-2 {
+#portfolio-2 {
   background-color: var(--background-primary);
   z-index: 2;
 }
 
 /* * About - Section */
 /* * -------------------------------------- */
-#about-section {
+#about {
   position: relative; /* For overlay positioning */
   background-image: url(../images/homepage/homepage_hero.webp);
   background-position: center;
@@ -405,7 +406,7 @@ main {
   perspective: 5px; 
 }
 
-#about-section::before {
+#about::before {
   /* Creates a pseudo-element for the overlay. */
   content: '';
   position: absolute;
@@ -430,14 +431,14 @@ main {
   transform: translateY(15%); 
 }
 
-#about-section h2,
-#about-section p {
+#about h2,
+#about p {
   color: var(--text-dark); 
 }
 
 /* * Teck Stack - Section */
 /* * -------------------------------------- */
-#tech-stack-section {
+#tech-stack {
   background-color: var(--background-light);
   z-index: 4;
 }
