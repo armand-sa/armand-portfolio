@@ -370,9 +370,8 @@ main {
 .section {
   height: 100dvh;
   width: 100%;
-  /* Allow sections to overlap and stick */
-  position: sticky;
-  top: 0;
+  /* Allow sections to overlap */
+  position: relative;
 }
 
 /* * Portfolio 1 - Section */
