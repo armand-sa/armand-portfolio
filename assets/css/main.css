@@ -171,6 +171,10 @@ p {
   text-transform: lowercase;
 }
 
+.bolder {
+  font-weight: 600;
+}
+
 /* ! -------------------------------------- */
 /* ! Navbar */
 /* ! -------------------------------------- */
@@ -207,7 +211,6 @@ p {
 /* * Font Styles */
 /* * -------------------------------------- */
 .navbar-brand, 
-.navbar-toggler, 
 .nav-link {
   /* Font size: min 14px, 16px preferred on 1440px, max 18px */
   font-size: clamp(0.875rem, 1.11vw, 1.125rem);
@@ -217,6 +220,7 @@ p {
 }
 
 .btn-close, 
+.navbar-toggler,
 .dropdown-menu .dropdown-item {
   /* Font size: min 12px, 14px preferred on 1440px, max 16px */
   font-size: clamp(.75rem, 0.972vw, 1rem);
@@ -233,9 +237,8 @@ p {
   position: relative;
 }
 
-
 .navbar-brand img {
-  height: 3rem;
+  height: clamp(1.5rem, 3.333vw, 4rem);
   margin-right: 2.08vw;
   border-radius: 100%;
   opacity: 70%;
@@ -243,9 +246,11 @@ p {
   transition: all 0.3s ease-in-out;
 }
 
-/* Right Side */
+/* * OPEN MENU Button */
+/* * -------------------------------------- */
 .navbar-toggler {
   border: none;
+  padding: 0;
 }
 
 /* Navbar Offcanvas Header */
@@ -265,14 +270,14 @@ p {
   padding: 0; 
 }
 
+/* * CLOSE Button */
+/* * -------------------------------------- */
 .btn-close {
   display: flex;
   align-items: center;
-  margin: 0;
-  padding: 0;
   width: auto;
-  height: auto;
   opacity: 100%;
+  color: var(--text-primary-gold);
 }
 
 /* Navbar Offcanvas Body */
@@ -317,7 +322,9 @@ p {
   outline: none;
 }
 
-.navbar-brand:focus {
+.navbar-brand:focus,
+.navbar-toggler:focus,
+.btn-close:focus {
   /* Removes the default focus outline */
   outline: none; 
   /* Removes any box-shadow applied as a focus indicator */
@@ -325,7 +332,9 @@ p {
 }
 
 /* Add a custom visual cue for focus for accessibility */
-.navbar-brand:focus-visible {
+.navbar-brand:focus-visible,
+.navbar-toggler:focus-visible,
+.btn-close:focus-visible {
   outline: 2px solid var(--accent-primary); 
   /* Only show focus when navigated via keyboard */
   outline-offset: 3px;
@@ -333,7 +342,8 @@ p {
 
 /* * Navbar - Hover Effects */
 /* * -------------------------------------- */
-.navbar-brand > .link-text {
+.navbar-brand > .link-text,
+.navbar-toggler {
   /* Creates a gradient that starts with --text-lightest-gold and transitions to --text-light-gold at 50%, then --text-primary-gold beyond 50%, applied horizontally */
   background-image: linear-gradient(
     to right,
@@ -358,7 +368,8 @@ p {
   transition: background-position 0.3s ease-in-out; /* Smoothly animates gradient positioning */
 }
 
-.navbar-brand .link-text::before {
+.navbar-brand .link-text::before,
+.navbar-toggler::before {
   /* Creates an empty pseudo-element */
   content: '';
   background: var(--text-primary-gold); /* Sets the line colour */
@@ -374,12 +385,14 @@ p {
   transition: width 0.3s ease-in-out; /* Smoothly animates the width expansion */
 }
 
-.navbar-brand:hover .link-text {
+.navbar-brand:hover .link-text,
+.navbar-toggler:hover {
   /* Moves the gradient to align perfectly with the text when hovered */
   background-position: 0;
 }
 
-.navbar-brand:hover .link-text::before {
+.navbar-brand:hover .link-text::before,
+.navbar-toggler:hover::before {
   /* Expands the underline to the full width of the text when hovered */
   width: 100%;
 }
@@ -391,9 +404,67 @@ p {
   transform: scale(1.1); 
 }
 
+/* * Close Button */
+.btn-close {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(0.75rem, 0.972vw, 1rem); /* Responsive font size */
+  text-transform: uppercase;
+  letter-spacing: 0.0313rem;
+  position: relative;
+  background-image: linear-gradient(
+    to right,
+    var(--text-lightest-gold),
+    var(--text-light-gold) 50%,
+    var(--text-primary-gold) 50%
+  ); /* Gradient for the text */
+  background-size: 200% 100%; /* Allows animation of the gradient */
+  background-position: 100%; /* Align the gradient for non-hover state */
+  background-clip: text; /* Clip the background to the text */
+  -webkit-background-clip: text; /* Compatibility with WebKit browsers */
+  -webkit-text-fill-color: var(--text-primary-gold); /* Ensures the default colour is --text-primary-gold */
+  color: transparent; /* Use the gradient background for the text */
+  transition: background-position 0.3s ease-in-out, -webkit-text-fill-color 0.3s ease-in-out; /* Smooth animations */
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+/* Underline for .btn-close */
+.btn-close::before {
+  content: '';
+  background: var(--text-primary-gold); /* Color of the underline */
+  display: block;
+  position: absolute;
+  bottom: -12px;
+  left: 8px;
+  width: 0;
+  max-width: 80%;
+  height: 1px;
+  opacity: 0;
+  transition: width 0.3s ease-in-out, opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Hover Effects for .btn-close */
+.btn-close:hover {
+  background-position: 0; /* Animate the gradient */
+  -webkit-text-fill-color: var(--text-light-gold); /* Change colour to light gold */
+}
+
+.btn-close:hover::before {
+  width: 80%;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
 /* * Navbar - Active States */
 /* * -------------------------------------- */
-.navbar-brand:active {
+.navbar-brand:active,
+.navbar-toggler:active,
+.btn-close:active {
   outline: none;
   border: none;
 }
@@ -405,7 +476,9 @@ p {
   transition: all 0.3s ease-in-out;
 }
 
-.navbar-brand:active .link-text {
+.navbar-brand:active .link-text,
+.navbar-toggler:active,
+.btn-close:active {
   transform: translateY(2px);
   transition: all 0.3s ease-in-out;
 }
