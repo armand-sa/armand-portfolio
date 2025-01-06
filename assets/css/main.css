@@ -43,7 +43,7 @@
 
   /* Box Shadow */
   --box-Shadow: 
-    0 0.25em 0.5em rgba(0, 0, 0, 0.3), /* Base shadow */
+    0 0.25em 0.5em rgba(0, 0, 0, 0.), /* Base shadow */
     0 0.0625em 0.25em rgba(255, 255, 255, 0.1); /* Light glow for dark UI */
   }
 
@@ -65,7 +65,7 @@ html {
 /* * -------------------------------------- */
 body {
   background-color: var(--background-primary);
-  color: var(--text-light);
+  color: var(--text-lightest-gold);
   /* Font declarations */
   font-family: var(--text-font-family);
   font-size: 16px;
@@ -138,39 +138,49 @@ h3 {
 }
 
 h1 {
-  /* Font size: min 48px, 85.8px preferred on 1440px, max 96px */
-  font-size: clamp(3rem, 5.96vw, 6rem);
+  /* Font size: min 47.6px (65% of 73.3px ≈ 47.6px), 73.3px = 5.090vw preferred on 1440px, max 95.3px (130% of 73.3px ≈ 95.3px) */
+  font-size: clamp(2.975rem, 5.090vw, 5.9562rem);
+  /* Letter-spacing: min 0.65px (65% of 1px ≈ 0.65px), 1px = 0.069vw preferred on 1440px, max 1.3px (130% of 1px ≈ 1.3px) */
+  letter-spacing: clamp(0.040625rem, 0.069vw, 0.08125rem);
 }
 
 h2 {
-  /* Font size: min 24px, 32px preferred on 1440px, max 36px */
-  font-size: clamp(1.5rem, 2.22vw, 2.25rem);
+  /* Font size: min 20.8px (65% of 32px ≈ 20.8px), 32px = 2.22vw preferred on 1440px, max 41.6px (130% of 32px ≈ 41.6px) */
+  font-size: clamp(1.3rem, 2.22vw, 2.6rem);
+  /* Letter-spacing: min 0.65px (65% of 1px ≈ 0.65px), 1px = 0.069vw preferred on 1440px, max 1.3px (130% of 1px ≈ 1.3px) */
+  letter-spacing: clamp(0.040625rem, 0.069vw, 0.08125rem);
 }
 
 h3 {
-  /* Font size: min 18px, 24px preferred on 1440px, max 28px */
-  font-size: clamp(1.125rem, 1.67vw, 1.75rem);
+  /* Font size: min 15.6px (65% of 24px ≈ 15.6px), 24px = 1.67vw preferred on 1440px, max 31.2px (130% of 24px ≈ 31.2px) */
+  font-size: clamp(0.975rem, 1.67vw, 1.95rem);
+  /* Letter-spacing: min 0.4875px (65% of 0.75px ≈ 0.4875px), 0.75px = 0.052vw preferred on 1440px, max 0.975px (130% of 0.75px ≈ 0.975px) */
+  letter-spacing: clamp(0.03046875rem, 0.052vw, 0.0609375rem);
 }
 
-/* * Paragraph Styles */
-/* * -------------------------------------- */
 p {
-  /* Font size: min 14px, 16px preferred on 1440px, max 18px */
-  font-size: clamp(0.875rem, 1.11vw, 1.125rem);
-  color: var(--text-light);
+  /* Font size: min 10.4px (65% of 16px ≈ 10.4px), 16px = 1.11vw preferred on 1440px, max 20.8px (130% of 16px ≈ 20.8px) */
+  font-size: clamp(0.65rem, 1.11vw, 1.3rem);
+  /* Letter-spacing: min 0.455px (65% of 0.7px ≈ 0.455px), 0.7px = 0.048vw preferred on 1440px, max 0.91px (130% of 0.7px ≈ 0.91px) */
+  letter-spacing: clamp(0.0284375rem, 0.048vw, 0.056875rem);
 }
 
 .footer-paragraph {
-  /* Font size: min 12px, 14px preferred on 1440px, max 16px */
-  font-size: clamp(0.75rem, 0.97vw, 1rem);
-  color: var(--text-light);
+  /* Font size: min 9.1px (65% of 14px ≈ 9.1px), 14px = 0.97vw preferred on 1440px, max 18.2px (130% of 14px ≈ 18.2px) */
+  font-size: clamp(0.57rem, 0.97vw, 1.14rem);
+  /* Letter-spacing: min 0.423px (65% of 0.65px ≈ 0.423px), 0.65px = 0.045vw preferred on 1440px, max 0.845px (130% of 0.65px ≈ 0.845px) */
+  letter-spacing: clamp(0.0264375rem, 0.045vw, 0.0528125rem);
 }
 
 .legal-paragraph {
-  /* Font size: min 10px, 12px preferred on 1440px, max 14px */
-  font-size: clamp(0.625rem, 0.83vw, 0.875rem);
-  color: var(--text-light);
+  /* Font size: min 7.8px (65% of 12px ≈ 7.8px), 12px = 0.83vw preferred on 1440px, max 15.6px (130% of 12px ≈ 15.6px) */
+  font-size: clamp(0.4875rem, 0.83vw, 0.975rem);
+  /* Letter-spacing: min 0.365px (65% of 0.56px ≈ 0.365px), 0.56px = 0.03889vw preferred on 1440px, max 0.728px (130% of 0.56px ≈ 0.728px) */
+  letter-spacing: clamp(0.0228125rem, 0.03889vw, 0.0455rem);
 }
+
+
+
 
 .c-lowercase {
   text-transform: lowercase;
@@ -190,7 +200,7 @@ a {
 
 .to-top {
   position: sticky;
-  top: 80dvh;
+  top: 87.23dvh;
   left: 100%;
   margin-right: 8.33vw;
   z-index: 99999;
@@ -630,6 +640,8 @@ body.menu-open .to-top {
   z-index: 2;
   height: 100%;
   width: 100%;
+  display: flex;
+  align-items: center;
 }
 
 /* * Hero Grid Container */
@@ -637,15 +649,70 @@ body.menu-open .to-top {
 
 .hero-grid-container {
   /* Top and bottom padding: 120px; left and right padding: 120px */
-  padding: 11.11dvh 8.33vw; 
+  padding: 8.33vw; 
   display: grid;
   /* 12 equal columns */
   grid-template-columns: repeat(12, 1fr); 
   /* 30px gutter between columns */
-  gap: 2.08vw; 
-  /* Center content vertically within the single row */
-  align-items: center; 
+  gap: 2.08vw;  
 }
+
+.hero-left-column {
+  grid-column: span 6;
+}
+
+.hero-right-column {
+  grid-column: span 6;
+  background-color: rgba(255, 160, 122, 0.1);
+}
+
+.hero-paragraph {
+  /* Font size: min 11.7px (65% of 18px ≈ 11.7px), 18px = 1.25vw preferred on 1440px, max 23.4px (130% of 18px ≈ 23.4px) */
+  font-size: clamp(0.73125rem, 1.25vw, 1.4625rem);
+  /* Letter-spacing: min 0.731px (65% of 1.125px ≈ 0.731px), 1.125px = 0.0703vw preferred on 1440px, max 1.462px (130% of 1.125px ≈ 1.462px) */
+  letter-spacing: clamp(0.0458rem, 0.0703vw, 0.0914rem);
+  color: var(--text-lightest-gold);
+  margin-top: 30px;
+  margin-bottom: 60px;
+}
+
+.btn-wrapper {
+  display: grid;
+  /* 12 equal columns */
+  grid-template-columns: repeat(6, 1fr); 
+  /* 30px gutter between columns */
+  gap: 2.08vw;
+  height: 3rem;
+  overflow: visible;
+}
+
+.button {
+  /* Make the primary button span 3 columns */
+  grid-column: span 3; 
+  border: 1px solid var(--accent-primary);
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-weight: 700;
+  position: relative;
+  z-index: 10;
+  padding: 0;
+}
+
+.btn-primary {
+  background: var(--accent-primary);
+  color: var(--text-dark);
+  box-shadow: var(--box-Shadow); 
+}
+
+.btn-secondary {
+  background: rgba(30, 30, 30, 0.1);
+  color: var(--text-primary-gold);
+  backdrop-filter: blur(10px); /* Slight blur effect */
+  -webkit-backdrop-filter: blur(10px); /* For Safari support */
+  box-shadow: var(--box-Shadow); 
+}
+
 
 /* ! -------------------------------------- */
 /* ! Main and Sections */
