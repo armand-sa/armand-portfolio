@@ -116,11 +116,22 @@
     <link rel="prefetch" href="pages/resume.html"> <!-- TODO: Prefetch additional pages as the site expands -->
   </head>
   
-  <body>
-    <!-- ! Scroll to Top -->
-    <nav>
-      <a href=""></a>
+  <body id="top">
+
+    <!-- ! Scroll-to-Top Button -->
+    <nav class="to-top" id="scrollToTop">
+      <a href="#top" class="to-top-link" aria-label="Scroll to the top of the page">
+        <div class="to-top-container">
+          <div class="left-to-top">
+            <p class="hover-text">Scroll to the top</p>
+          </div>
+          <div class="to-top-right">
+            <img src="./assets/images/icons/Up Arrow.png" alt="Arrow Pointing upwards">
+          </div>
+        </div>
+      </a>
     </nav>
+
     <!-- ! Header / Navbar -->
     <header>
       <!-- Bootstrap Navbar -->
@@ -206,13 +217,23 @@
       </video>
       <div class="video-overlay"></div>
       <div class="hero-content">
-        <h1>Full-Stack Engineer in the making...</h1>
-        <p>Your journey starts here.</p>
+        <div class="hero-grid-container">
+          <h1>Full-Stack Engineer in the making...</h1>
+          <p class="hero-paragraph">Hello, I'm <span class="bolder">Armand McKey</span>—on a path to full-stack mastery, shaping intuitive user experiences and soon to become proficient in both PERN and MERN.</p>
+          <button></button>
+          <button></button>
+
+          <div class="hero-right-column">
+
+          </div>
+        </div>
+        
       </div>
     </section>
 
     <!-- ! Main Content -->
     <main>
+      
       <!-- * Portfolio 1 - Section -->
       <!-- * -------------------------------------- -->
       <section class="section" id="portfolio-1">
@@ -259,6 +280,28 @@
 
     <!-- ! Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <!-- ! Hide the "to Top" Icon when the nav menu is open -->
+    <script>
+      const body = document.body;
+    
+      // Add menu-open class when the navbar-toggler is clicked
+      document.querySelector('.navbar-toggler').addEventListener('click', () => {
+        body.classList.toggle('menu-open');
+      });
+    
+      // Remove menu-open class when the offcanvas is dismissed
+      document.querySelector('.btn-close').addEventListener('click', () => {
+        body.classList.remove('menu-open');
+      });
+    
+      // Ensure menu-open is removed on offcanvas hide (covers other ways to close, like clicking the backdrop)
+      const offcanvas = document.querySelector('.offcanvas');
+      offcanvas.addEventListener('hidden.bs.offcanvas', () => {
+        body.classList.remove('menu-open');
+      });
+    </script>
+
   </body>
 
 </html>

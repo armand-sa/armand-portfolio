@@ -40,7 +40,12 @@
 
   /* Line Colours */
   --on-dark-line: #5F5B55;
-}
+
+  /* Box Shadow */
+  --box-Shadow: 
+    0 0.25em 0.5em rgba(0, 0, 0, 0.3), /* Base shadow */
+    0 0.0625em 0.25em rgba(255, 255, 255, 0.1); /* Light glow for dark UI */
+  }
 
 /* * HTML root styles: Global settings 
    * applied to the html element */
@@ -175,25 +180,96 @@ p {
   font-weight: 600;
 }
 
+a {
+  text-decoration: none;
+}
+
+/* ! -------------------------------------- */
+/* ! Scroll to top */
+/* ! -------------------------------------- */
+
+.to-top {
+  position: sticky;
+  top: 80dvh;
+  left: 100%;
+  margin-right: 8.33vw;
+  z-index: 99999;
+  width: fit-content;
+}
+
+.to-top-container {
+  display: flex;
+  align-items: center;
+}
+
+/* Text */
+.left-to-top {
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000000;
+  box-shadow: var(--box-Shadow);
+  height: 2.625rem;
+  width: 0; /* Start with no width */
+  overflow: hidden; /* Prevent content overflow */
+  white-space: nowrap; /* Prevent text wrapping */
+  transform-origin: right; /* Expand from right */
+  transition: all 0.3s ease-out;
+}
+
+.hover-text {
+  color: var(--text-primary-gold);
+  text-transform: uppercase;
+  font-size: .75rem;
+  letter-spacing: 0.5px;
+}
+
+/* Right Side */
+.to-top-right > img {
+  width: 1rem;
+  transform: translateY(0); /* Stable initial position */
+  transition: all 0.4s ease-out;
+}
+
+.to-top-right {
+  border: 1px solid var(--on-dark-line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1.08vw;
+  height: 2.625rem;
+  width: 2.625rem;
+  background-color: #000000;
+  box-shadow: var(--box-Shadow);
+  overflow: hidden;
+}
+
+/* Hover States */
+.to-top-link:hover .to-top-right > img {
+  transform: translateY(-3px);
+}
+
+.to-top-link:hover .left-to-top {
+  border: 1px solid var(--on-dark-line);
+  width: 10rem; /* Define the final width */
+}
+
+/* Hide "To Top" when the menu is open */
+body.menu-open .to-top {
+  display: none;
+}
+
+
+
 /* ! -------------------------------------- */
 /* ! Navbar */
 /* ! -------------------------------------- */
 
-/* Gap ~30px at 1440px wide */
-/* Padding: ~120px at 1440px wide */
-/* 
-.container {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 2.08vw;            
-  padding: 0 8.33vw;      
-} 
-*/
-
 .navbar {
   background-color: var(--background-dark);
   height: 5.625rem;
-  box-shadow: 0 5px 40px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--box-Shadow);
   border: none;
 }
 
@@ -262,7 +338,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-shadow: 0 5px 40px rgba(0, 0, 0, 0.15); 
+  box-shadow: var(--responsive-box-Shadow); 
 }
 
 .offcanvas-title {
@@ -554,6 +630,21 @@ p {
   z-index: 2;
   height: 100%;
   width: 100%;
+}
+
+/* * Hero Grid Container */
+/* * -------------------------------------- */
+
+.hero-grid-container {
+  /* Top and bottom padding: 120px; left and right padding: 120px */
+  padding: 11.11dvh 8.33vw; 
+  display: grid;
+  /* 12 equal columns */
+  grid-template-columns: repeat(12, 1fr); 
+  /* 30px gutter between columns */
+  gap: 2.08vw; 
+  /* Center content vertically within the single row */
+  align-items: center; 
 }
 
 /* ! -------------------------------------- */
