@@ -238,7 +238,7 @@ p {
 }
 
 .navbar-brand img {
-  height: clamp(1.5rem, 3.333vw, 4rem);
+  height: clamp(2rem, 3.333vw, 4rem);
   margin-right: 2.08vw;
   border-radius: 100%;
   opacity: 70%;
@@ -307,6 +307,7 @@ p {
 /* Dropdown Links */
 .dropdown-menu .dropdown-item {
   padding: .9375rem 1.875rem;
+  transition: color 0.3s ease-in-out;
 }
 
 .dropdown-divider {
@@ -470,6 +471,11 @@ p {
   transform: translateX(0);
 }
 
+/* Dropdown Links */
+.dropdown-menu .dropdown-item:hover {
+  color: var(--text-lightest-gold);
+}
+
 
 /* * Navbar - Active States */
 /* * -------------------------------------- */
@@ -493,6 +499,11 @@ p {
 .btn-close:active,
 .nav-link {
   transform: translateY(2px);
+  transition: all 0.3s ease-in-out;
+}
+
+.dropdown-menu .dropdown-item:active {
+  background: rgba(255, 255, 255, 0.10);
   transition: all 0.3s ease-in-out;
 }
 
