@@ -690,8 +690,8 @@ body.menu-open .to-top {
   /* Make the primary button span 3 columns */
   grid-column: span 3; 
   border: 1px solid var(--accent-primary);
-  font-size: 14px;
-  letter-spacing: 0.5px;
+  font-size: 16px;
+  letter-spacing: px;
   text-transform: uppercase;
   font-weight: 700;
   position: relative;
