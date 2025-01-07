@@ -794,12 +794,12 @@ color: var(--text-primary-gold);
     transform: translateY(0); /* Starting and ending position */
   }
   50% {
-    transform: translateY(3px); /* Move down by 2px */
+    transform: translateY(5px); /* Move down by 2px */
   }
 }
 
 .right-column-heading > img {
-  animation: bounce 1.5s ease-in-out infinite;
+  animation: bounce 2s ease-in-out infinite;
   height: 1.11vh;
 }
 
