@@ -11,7 +11,7 @@
   --heading-font-family: 'Prata', serif;
   --heading-font-weight: 400;
   --heading-font-style: normal;
-  --heading-line-height: 1.1;
+  --heading-line-height: 0.9;
   --heading-letter-spacing: 2px;
 
   /* Typography - Body */
@@ -138,24 +138,18 @@ h3 {
 }
 
 h1 {
-  /* Font size: min 47.6px (65% of 73.3px ≈ 47.6px), 73.3px = 5.090vw preferred on 1440px, max 95.3px (130% of 73.3px ≈ 95.3px) */
-  font-size: clamp(2.975rem, 5.090vw, 5.9562rem);
-  /* Letter-spacing: min 0.65px (65% of 1px ≈ 0.65px), 1px = 0.069vw preferred on 1440px, max 1.3px (130% of 1px ≈ 1.3px) */
-  letter-spacing: clamp(0.040625rem, 0.069vw, 0.08125rem);
+  /* Font size: min 55.6px (65% of 85.5px ≈ 55.6px), 85.5px = 5.938vw preferred on 1440px, max 111.2px (130% of 85.5px ≈ 111.2px) */
+  font-size: clamp(3.473rem, 5.938vw, 6.947rem);
 }
 
 h2 {
   /* Font size: min 20.8px (65% of 32px ≈ 20.8px), 32px = 2.22vw preferred on 1440px, max 41.6px (130% of 32px ≈ 41.6px) */
   font-size: clamp(1.3rem, 2.22vw, 2.6rem);
-  /* Letter-spacing: min 0.65px (65% of 1px ≈ 0.65px), 1px = 0.069vw preferred on 1440px, max 1.3px (130% of 1px ≈ 1.3px) */
-  letter-spacing: clamp(0.040625rem, 0.069vw, 0.08125rem);
 }
 
 h3 {
   /* Font size: min 15.6px (65% of 24px ≈ 15.6px), 24px = 1.67vw preferred on 1440px, max 31.2px (130% of 24px ≈ 31.2px) */
   font-size: clamp(0.975rem, 1.67vw, 1.95rem);
-  /* Letter-spacing: min 0.4875px (65% of 0.75px ≈ 0.4875px), 0.75px = 0.052vw preferred on 1440px, max 0.975px (130% of 0.75px ≈ 0.975px) */
-  letter-spacing: clamp(0.03046875rem, 0.052vw, 0.0609375rem);
 }
 
 p {
@@ -659,11 +653,12 @@ body.menu-open .to-top {
 
 .hero-left-column {
   grid-column: span 6;
+  /* background-color: rgba(255, 160, 122, 0.1); */
 }
 
 .hero-right-column {
   grid-column: span 6;
-  background-color: rgba(255, 160, 122, 0.1);
+  /* background-color: rgba(255, 160, 122, 0.1); */
 }
 
 .hero-paragraph {
